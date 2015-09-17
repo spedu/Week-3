@@ -16,9 +16,13 @@ define(['Song'], function(Song){
     this.playlist.splice(index, 1);
     this.updatePlaylist();
   };
-  
+
   Playlist.prototype.updatePlaylist = function() {
     sessionStorage.setItem('playlist', JSON.stringify(this.playlist));
+  };
+
+  Playlist.prototype.count = function() {
+    return this.playlist.length;
   };
 
   return Playlist;
